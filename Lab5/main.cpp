@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
+    //DIN FORMA INFIXATA IN FORMA POSTFIXATA
     char sir[256]="";
     stack *s;
     init(s);

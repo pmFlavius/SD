@@ -65,6 +65,8 @@ void push(stack *&s,char val)
 }
 char top(stack *s)
 {
+    if(!s)
+        return 0;
     return s->data;
 }
 void pop(stack *&s)
