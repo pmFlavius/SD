@@ -48,9 +48,8 @@ CImg<unsigned char> ColoreazaDomeniu(CImg<unsigned char>& in, Pozitie init, unsi
                 {
                     imgOut(iv,jv)=color;
                     put(q,{jv,iv});
-                    static int cnt=0;
-                    if(cnt++ % 100 ==0)
-                        dispOut.display(imgOut);
+                    dispOut.display(imgOut);
+                    sleep(0.1);
                 }
             }
             
