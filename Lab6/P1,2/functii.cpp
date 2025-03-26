@@ -100,7 +100,7 @@ void getQ(Queue &q)
     }
     else
     {
-        Nod *p = new Nod;
+        
         if (q.head == q.tail)
         {
             q.head = 0;
@@ -108,7 +108,7 @@ void getQ(Queue &q)
         }
         else
         {
-            p = q.head;
+            Nod *p = q.head;
             q.head = q.head->succ;
             cout << "A fost eliminat elementul " << p->data<<endl;
             delete p;
