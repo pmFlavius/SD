@@ -9,11 +9,12 @@ int main()
     queue q[DIM_MAX];
     init(*q);
     cout<<"Introduceti elemente in coada statica (0-pt iesire)";
-    int x=-1;
+    int x;
+    cin>>x;
     while(x && !isFull(*q))
     {
-        cin>>x;
         put(*q,x);
+        cin>>x;
     }
     while(!isEmpty(*q))
     {
@@ -24,12 +25,12 @@ int main()
     //coada dinamica
     Queue Q;
     initQ(Q);
-    x=-1;
     cout<<"Introduceti elemente in coada dinamica (0-pt iesire)";
+    cin>>x;
     while(x)
     {
-        cin>>x;
         putQ(Q,x);
+        cin>>x;      
     }
     while(!isEmptyQ(Q))
     {
