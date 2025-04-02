@@ -9,14 +9,14 @@ struct Nod
     Nod *succ;
 };
 
-int h1(char *key);
-int h2(char *key);
-int h3(char *key);
+unsigned int h1(char *key);
+unsigned int h2(char *key);
+unsigned int h3(char *key);
 float GC(Nod *HT[]);
 void init(Nod *HT[]);
-void insert(Nod *HT[], char *cheie, int (*pf)(char *));
-Nod *find(Nod *HT[], char *cheie, int (*pf)(char *));
-void remove(Nod *HT[], char *cheie, int (*pf)(char *));
+void insert(Nod *HT[], char *cheie, unsigned int (*pf)(char *));
+Nod *find(Nod *HT[], char *cheie,unsigned int (*pf)(char *));
+void remove(Nod *HT[], char *cheie,unsigned int (*pf)(char *));
 void afisareHT(Nod *HT[]);
 void deleteHT(Nod *HT[]);
 #endif

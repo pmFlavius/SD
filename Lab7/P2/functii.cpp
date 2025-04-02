@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int h1(char *key) // modulara
+unsigned int h1(char *key) // modulara
 {
     int i = 0, sum = 0;
     while (key[i])
@@ -16,7 +16,7 @@ int h1(char *key) // modulara
     return sum % M;
 }
 
-int h2(char *key) // prin inmultire
+unsigned int h2(char *key) // prin inmultire
 {
     int i = 0, sum = 0;
     while (key[i])
@@ -24,27 +24,27 @@ int h2(char *key) // prin inmultire
         sum += key[i];
         i++;
     }
-    int a = (sqrt(5) - 1) / 2;
-    int nr = sum * a - floor(sum * a);
-    return floor(M * nr);
+    float a = (sqrt(5) - 1) / 2;
+    float nr = sum * a - floor(sum * a);
+    return (int)floor(M * nr);
 }
 
-int h3(char *key) // Bernstein
+unsigned int h3(char *key) // Bernstein
 {
-    int h = 5381;
+    unsigned int h = 5381;
     char c;
     while (c = *key++)
     {
-        h += (h << 5) + c;
+        h = (h << 5) + h + c;
     }
-    return h;
+    return h%M;
 }
 void init(Nod *HT[])
 {
     for (int i = 0; i < M; i++)
         HT[i] = NULL;
 }
-Nod *find(Nod *HT[], char *cheie, int (*pf)(char *))
+Nod *find(Nod *HT[], char *cheie,unsigned int (*pf)(char *))
 {
     int hash = pf(cheie);
     Nod *p = HT[hash];
@@ -56,7 +56,7 @@ Nod *find(Nod *HT[], char *cheie, int (*pf)(char *))
     }
     return NULL;
 }
-void insert(Nod *HT[], char *cheie, int (*pf)(char *))
+void insert(Nod *HT[], char *cheie,unsigned int (*pf)(char *))
 {
     Nod *p = new Nod;
     p->key = new char[strlen(cheie) + 1];
@@ -84,7 +84,7 @@ void insert(Nod *HT[], char *cheie, int (*pf)(char *))
     }
 }
 
-void remove(Nod *HT[], char *cheie, int (*pf)(char *))
+void remove(Nod *HT[], char *cheie,unsigned int (*pf)(char *))
 {
     int hash = pf(cheie);
     Nod *p = HT[hash], *prev = 0;
