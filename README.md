@@ -4,3 +4,4 @@
 <h5>Lab4: Liste liniare dublu inlantuite si liste circulare</h5>
 <h5>Lab5: Stive</h5>
 <h5>Lab6: Cozi</h5>
+<h5>Lab7: Tabele de dispersie(HT)</h5>
