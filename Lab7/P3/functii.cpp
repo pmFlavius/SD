@@ -9,12 +9,28 @@ unsigned int h(char *key)
     int i = 0, sum = 0;
     while (key[i])
     {
-        sum += key[i];
+        char c = key[i];
+
+        if (c >= 'A' && c <= 'Z')
+            sum += c - 'A' ;
+        else if (c >= 'a' && c <= 'z')
+            sum += c - 'a' ;
+
         i++;
     }
-    return sum % M;
+    return (sum % M);
 }
 
+char toupper(char c)
+{
+    if (c >= 'a' && c <= 'z')
+        return c - 32;
+    return c;
+}
+bool estelitera(char c)
+{
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+}
 void init(Nod *HT[])
 {
     for (int i = 0; i < M; i++)
@@ -43,20 +59,11 @@ void insert(Nod *HT[], char *cheie)
     {
         HT[hash] = p;
         p->succ = 0;
+        HT[hash]->cnt=1;
     }
     else
     {
-        Nod *q = find(HT, cheie);
-        if (!q)
-        {
-            p->succ = HT[hash];
-            HT[hash] = p;
-        }
-        else
-        {
-            cout << "Elementul se afla deja n lista";
-            return;
-        }
+        HT[hash]->cnt++;
     }
 }
 
@@ -88,15 +95,15 @@ void remove(Nod *HT[], char *cheie)
 
 void afisareHT(Nod *HT[])
 {
-    for(int i=0;i<M;i++)
+    char s = 'A';
+    for (int i = 0; i < M; i++)
     {
-        Nod *p=HT[i];
-        cout<<"Linia "<<i<<": ";
-        while(p)
-        {
-            cout<<p->key<<" ";
-            p=p->succ;
-        }
-        cout<<endl;
+        cout << s << (char)(s + 32) << ": ";
+        s++;
+        if(!HT[i])
+            cout<<"0";
+        else
+            cout << HT[i]->cnt;
+        cout << endl;
     }
 }
