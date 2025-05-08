@@ -8,3 +8,4 @@
 <h5>Lab8: Arbori binari</h5>
 <h5>Lab9: BST</h5>
 <h5>Lab10: Arbori AVL</h5>
+<h5>Lab11: Arbori Heap</h5>
