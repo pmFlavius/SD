@@ -55,6 +55,7 @@ void insert(Nod *HT[], char *cheie)
         else
         {
             cout << "Elementul se afla deja n lista";
+            delete p;
             return;
         }
     }
