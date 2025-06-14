@@ -14,7 +14,7 @@ void postordine(Nod *rad);
 bool cautare(Nod *rad,int val);
 void stergere(Nod *&rad,int val);
 void Deleteroot(Nod *&rad);
-Nod *RemoveGreatest(Nod *rad);
+Nod *RemoveGreatest(Nod *&rad);
 bool cautareIterativ(Nod *rad,int val);
 void inserareIterativ(Nod *&rad,int val);
 void stergereIterativ(Nod *&rad,int val);
