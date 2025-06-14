@@ -123,16 +123,21 @@ int mijloc(Nod *cap)
 }
 void inversare(Nod *&cap)
 {
-    Nod *prec=0,*p=cap,*next=0;
-    while(next)
+    Nod *prec = 0;
+    Nod *p = cap;
+    Nod *next = 0;
+
+    while (p != 0)
     {
-        next=p->succ;
-        p->succ=prec;
-        prec=p;
-        p=next;
+        next = p->succ;   
+        p->succ = prec;   
+        prec = p;         
+        p = next;         
     }
-    p=prec;
+
+    cap = prec; 
 }
+
 void dealocare(Nod *&cap)
 {
     Nod *p=cap,*q=0;
