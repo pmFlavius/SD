@@ -118,7 +118,7 @@ void Deleteroot(Nod *&rad)
     }
 }
 
-Nod *RemoveGreatest(Nod *rad)
+Nod *RemoveGreatest(Nod *&rad)
 {
     if (rad->drt)
     {
