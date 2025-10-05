@@ -16,7 +16,10 @@ int main()
         if(estelitera(buffer[i]))
         {
             char s=toupper(buffer[i]);
-            insert(HT,&s);
+            char litera[2];
+            litera[0]=s;
+            litera[1]=NULL;
+            insert(HT,litera);
         }
     }
     afisareHT(HT);
