@@ -9,4 +9,3 @@
 <h5>Lab9: BST</h5>
 <h5>Lab10: Arbori AVL</h5>
 <h5>Lab11: Arbori Heap</h5>
-<h5>Lab12: Coada cu prioritate(trebuie terminat)</h5>
